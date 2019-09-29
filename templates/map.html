@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Echart样例</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href={% static 'css/bootstrap.min.css' %}/>
+    <link rel="stylesheet" type="text/css" href={% static 'css/spinner.css' %}/>
+
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+        .tg .tg-baqh{text-align:center;vertical-align:top}
+        .tg .tg-lqy6{text-align:right;vertical-align:top}
+        .tg .tg-yw4l{vertical-align:top}
+    </style>
+</head>
+{% verbatim %}
+<body style="background-color:#494A5F;height: 100%" ng-app="mapApp" ng-controller="mapCtrl">
+
+<div class="col-md-12">
+    <div class="col-md-3">
+        <div class="col-md-12" style="height: 100%">
+            <div class="panel panel-default" style="height: 100%">
+                <div class="panel-heading">
+                    图表展示参数
+                </div>
+                <div class="panel-body" >
+                    <div class="input-group col-md-12" style="margin-left: auto;margin-right: auto;margin-bottom: 30px">
+                        <span class="input-group-addon  alert-info">北京数值</span>
+                        <input type="text" ng-model="beijingValue" class="form-control">
+                    </div>
+                    <div class="col-md-12" style="text-align: center">
+                        <button class="btn btn-primary" ng-click="updatePage()">刷新</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <span><h4>地图样例</h4></span>
+                    </div>
+                    <div class="panel-body">
+                        <div id="demoChart" ng-style="chartStyle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--遮罩层-->
+<div id="hidebg" style="position: fixed;z-index:11;background:rgba(0,0,0,0.6);height:100%;top:0;left:0;">
+    <div class="spinner"  style="margin-top: 300px">
+        <div class="spinner-container container1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container2">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container3">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+    </div>
+</div>
+{% endverbatim %}
+
+<script type="text/javascript" src={% static 'js/jquery-2.1.1.min.js' %}></script>
+<script type="text/javascript" src={% static 'js/bootstrap.min.js' %}></script>
+<script type="text/javascript" src={% static 'js/angular.js' %}></script>
+<script type="text/javascript" src={% static 'js/mapCtrl.js' %}></script>
+<script type="text/javascript" src={% static 'js/echarts.js' %}></script>
+<script type="text/javascript" src={% static 'js/china.js' %}></script>
+</body>
+</html>
